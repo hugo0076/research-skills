@@ -23,5 +23,6 @@ Understand the direction deeply before any compute. This is an orchestrated brai
 - This is orientation more than rigor, but lean on the `rigor` creed where it helps.
 
 ## Output
-- Write the synthesis (purpose, hypotheses, first plan) to the **top of `docs/experiment_log.md`**.
+- Write the synthesis to **`docs/project_direction.md`**. This is the canonical standing brief, read at planning time, so structure it so a subagent or a fresh session can read it cold: research question and motive, how it sits in the literature, the experimental setup, what counts as a positive result, baselines, what would falsify it, and the relevant models/datasets/references.
+- Make sure `docs/experiment_log.md` has a top line pointing at it (`Direction: ./project_direction.md`). The log itself stays dated history; do **not** copy the direction into it.
 - Populate initial entries in `docs/claims_status.md` for the hypotheses you will test.

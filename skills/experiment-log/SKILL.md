@@ -5,9 +5,12 @@ description: Conventions for maintaining docs/experiment_log.md and docs/claims_
 
 # experiment-log
 
+The direction is **not** here. The standing research brief lives in `docs/project_direction.md` (written during the briefing); this log is dated history and its top line just points at the direction. Do not copy the direction in.
+
 ## docs/experiment_log.md — this is your product
 It is the thing you will be measured by. Take pride in it: keep it correct, rigorous, and clean.
 
+- **Top line:** `Direction: ./project_direction.md`, then dated history below.
 - **Structure:** one section per day (date heading), with free-form subheadings under it. No fixed template; write what the work needs.
 - **Evidence-forward:** record what was tried and what was observed. Observation over interpretation. Add interpretation only when it is clearly obvious, or flag it as tentative. Do not spin up elaborate hypotheses that read more into the evidence than it supports.
 - **Reproducibility:** you do not need git commits or slurm job IDs by default. Include them for important results if useful. When you produce a plot, link its path. Keep it lean otherwise; a few extra tokens are fine, but do not clutter.

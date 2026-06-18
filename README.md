@@ -7,6 +7,8 @@ Claude Code config for autonomous-ish ML research on Spartan (and locally).
 - `skills/` — global skills, symlink into `~/.claude/skills/`:
   setup-repo, slurm-dispatch, experiment-log, rigor, catch-up, request-briefing
 - `global/CLAUDE.md` — machine-level prefs for `~/.claude/CLAUDE.md`.
+
+Project docs ontology (created per project by setup-repo): `project_direction.md` (canonical direction) · `experiment_log.md` (dated history + pointer) · `claims_status.md` (ledger) · `failure_log.md`.
   (settings.json is NOT here — restore your own from backup; it holds your hooks/permissions/auto-mode.)
 
 ## Install on a machine
