@@ -14,7 +14,7 @@ description: How to run compute on Spartan. Submit batch jobs, hold and use the 
 ```bash
 #!/bin/bash
 #SBATCH --account=punim2265
-#SBATCH -p gpu-h100
+#SBATCH -p gpu-a100,gpu-h100
 #SBATCH --gres=gpu:1
 #SBATCH --time=<HH:MM:SS>
 #SBATCH --cpus-per-task=8
@@ -26,7 +26,8 @@ cd /data/gpfs/projects/punim2265/<project>
 uv run python <script.py> <args>
 echo done > outputs/<job>/DONE   # sentinel on success
 ```
-- Defaults: `gpu-h100`, 1 GPU for an 8B SFT (A100 has similar queue waits, so just ask for H100). Adjust `--mem` on the fly; lower `--cpus-per-task` if 8 slows scheduling. For multi-GPU, consult the Spartan GPU docs and set `--gres=gpu:N` with matching cpus/mem.
+- Defaults: 1 GPU for a ≤27B SFT. Adjust `--mem` on the fly; lower `--cpus-per-task` if 8 slows scheduling. For multi-GPU, consult the Spartan GPU docs and set `--gres=gpu:N` with matching cpus/mem.
+- **Hedge GPU pools, keep wall-time tight.** Submit to `--partition=gpu-a100,gpu-h100` (A100-80GB fits a 27B) with a tight `--time` (~1.3× runtime): short multi-partition jobs backfill into gaps and start far sooner than padded h100-only ones.
 - **Default to concurrency.** For an independent sweep (e.g. a loss-weight at 0.01 / 0.1 / 1.0), submit all jobs at once and let the scheduler queue them. Go serial only when a run is expensive and its outcome would decide whether the others are worth doing.
 
 ## Completion detection (validated)
