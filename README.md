@@ -3,7 +3,7 @@
 Claude Code config for autonomous-ish ML research on Spartan (and locally).
 
 ## Layout
-- `CLAUDE.md` — per-project orchestrator brief. `setup-repo` copies this into each new project.
+- `templates/` — CLAUDE.md pieces `setup-repo` assembles per project: `head.md` (fillable project block) + a host block (`host-spartan.md` or `host-local.md`) + `role-core.md` (shared role). Host decides the compute model.
 - `skills/` — global skills, symlink into `~/.claude/skills/`:
   setup-repo, slurm-dispatch, experiment-log, rigor, catch-up, request-briefing
 - `global/CLAUDE.md` — machine-level prefs for `~/.claude/CLAUDE.md`.
